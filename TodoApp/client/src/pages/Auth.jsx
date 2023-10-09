@@ -8,7 +8,7 @@ export const Auth = () => {
   const [variant, setvariant] = useState("login");
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="flex h-[550px] w-3/4 flex-col overflow-hidden rounded-md lg:w-[55%] lg:flex-row">
+      <div className="flex h-screen w-screen flex-col overflow-hidden rounded-md md:h-[550px] lg:w-[55%] lg:flex-row">
         <div className="relative flex h-full w-full flex-col items-center justify-center bg-auth bg-cover bg-right-top text-white lg:w-2/4">
           <Link to={"/"}>
             <AiOutlineArrowLeft

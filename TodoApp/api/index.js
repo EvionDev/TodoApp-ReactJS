@@ -1,6 +1,11 @@
 // Import
 const express = require('express')
 const cors = require('cors')
+require('dotenv').config()
+
+// Auth
+const register = require('./auth/Register')
+const login = require('./auth/Login')
 
 const app = express()
 app.use(express.urlencoded({ extended: false }))
@@ -19,6 +24,9 @@ app.use(
 		origin: 'http://localhost:5173',
 	})
 )
+
+app.post('/register', register)
+app.post('/login', login)
 
 app.listen(4000, () => {
 	console.log('Server running')

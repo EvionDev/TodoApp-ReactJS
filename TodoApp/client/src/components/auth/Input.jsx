@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ type, onChange }) => {
+const Input = ({ type, onChange, value }) => {
   return (
     <>
       <input
@@ -8,6 +8,8 @@ const Input = ({ type, onChange }) => {
         type={type}
         placeholder=""
         onChange={onChange}
+        value={value}
+        autoComplete="false"
       />
     </>
   );

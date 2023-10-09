@@ -16,7 +16,7 @@ const navbar = () => {
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       {isOpen ? (
-        <div className="absolute right-2 top-20 flex h-auto w-auto flex-col items-end justify-start gap-6 rounded-md bg-black/50 px-6 py-6">
+        <div className="absolute right-2 top-16 flex h-auto w-auto flex-col items-end justify-start gap-6 rounded-md bg-black/50 px-6 py-6">
           <Button name="Login" />
           <Button name="Register" special={true} />
         </div>
