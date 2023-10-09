@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        auth: "url('../public/Auth.jpg')",
+        auth: "url('../Auth.jpg')",
       },
     },
   },
