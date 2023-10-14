@@ -7,6 +7,9 @@ require('dotenv').config()
 const register = require('./auth/Register')
 const login = require('./auth/Login')
 
+// Task
+const createTask = require('./services/task/CreateTask')
+
 const app = express()
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -27,6 +30,7 @@ app.use(
 
 app.post('/register', register)
 app.post('/login', login)
+app.post('/createTask', createTask)
 
 app.listen(4000, () => {
 	console.log('Server running')

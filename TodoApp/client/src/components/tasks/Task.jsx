@@ -3,7 +3,7 @@ import { BiEdit, BiTrash } from "react-icons/bi";
 
 const Task = () => {
   return (
-    <div className="flex h-auto w-1/4 flex-row rounded-lg border bg-[#161617] p-10">
+    <div className="flex h-auto w-1/4 flex-row rounded-lg border bg-[#161617] p-10 shadow-lg ">
       <div className="mr-5 inline-flex items-center">
         <input
           id="login"
