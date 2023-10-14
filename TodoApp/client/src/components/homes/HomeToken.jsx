@@ -5,7 +5,7 @@ import Task from "../tasks/task";
 const HomeToken = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-8 pt-10 md:pt-20">
-      <div className="flex h-auto w-auto flex-row justify-between gap-8 rounded-[42px] border-[1px] border-white px-14 py-16">
+      <div className="flex h-auto w-auto flex-row justify-between gap-8 rounded-[42px] border border-white px-14 py-16">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-3xl font-bold">Todo Done</h1>
           <h3 className="text-xl">Keep it up</h3>
