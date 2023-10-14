@@ -17,7 +17,7 @@ export const Auth = () => {
             />
           </Link>
           <h2 className="z-10 mb-2 text-5xl">To-Do App</h2>
-          <p className="z-10 px-4">
+          <p className="z-10 px-20">
             Discover, create & share lists of useful resources
           </p>
           <div className="absolute left-0 top-0 h-full w-full bg-black opacity-60"></div>

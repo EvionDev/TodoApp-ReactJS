@@ -4,6 +4,11 @@ import Button from "./Button";
 
 const navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const token = window.localStorage.getItem("token");
+
+  const signOut = () => {
+    window.localStorage.clear();
+  };
 
   return (
     <div className="flex h-16 items-center justify-between border-b-2 border-white px-4 md:justify-around md:px-0">
@@ -11,8 +16,16 @@ const navbar = () => {
         Todo<span className="text-orange-500">App</span>
       </h1>
       <div className="hidden gap-4 md:flex">
-        <Button name="Login" />
-        <Button name="Register" special={true} />
+        {!token ? (
+          <>
+            <Button name="Login" />
+            <Button name="Register" special={true} />
+          </>
+        ) : (
+          <>
+            <Button name="Sign out" onClick={signOut} />
+          </>
+        )}
       </div>
       <div className="block md:hidden">
         <Hamburger toggled={isOpen} toggle={setOpen} />

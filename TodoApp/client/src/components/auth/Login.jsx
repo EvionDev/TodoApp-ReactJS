@@ -53,7 +53,7 @@ const Register = ({ onClick }) => {
       <p className="text-sm text-white">
         Doesn't have an account yet?
         <span
-          className="ml-1 cursor-pointer text-blue-400 duration-300 hover:text-blue-500"
+          className="ml-1 cursor-pointer font-semibold text-orange-400 duration-300 hover:text-orange-500"
           onClick={onClick}
         >
           Sign up
