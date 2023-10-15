@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import Task from "../tasks/task";
 
 const HomeToken = () => {
   const [description, setDescription] = useState("");
-  const token = window.localStorage.getItem("token");
+  const [taskNumber, setTaskNumber] = useState(0);
+  const [completetaskNumber, setCompleteTaskNumber] = useState(0);
+  const [allTask, setAllTask] = useState([]);
+  const token = window.sessionStorage.getItem("token");
+
+  const getTask = async () => {
+    const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}getTask`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json", Authorization: token },
+    });
+    res.json().then((data) => {
+      setTaskNumber(data.tasks.length);
+      setCompleteTaskNumber(data.completeTasks.length);
+      setAllTask(data.tasks);
+    });
+  };
 
   const createTask = async (e) => {
     e.preventDefault();
@@ -20,8 +35,12 @@ const HomeToken = () => {
     });
   };
 
+  useEffect(() => {
+    getTask();
+  });
+
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-8 pt-10 md:pt-20">
+    <div className="flex w-full flex-col items-center justify-center gap-8 pt-10 md:pt-28">
       <div className="flex h-auto w-auto flex-row justify-between gap-8 rounded-[42px] border border-white px-14 py-16">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-3xl font-bold">Todo Done</h1>
@@ -29,7 +48,7 @@ const HomeToken = () => {
         </div>
         <div>
           <div className="flex h-[150px] w-[150px] items-center justify-center rounded-full bg-fuchsia-500">
-            <h1 className="text-4xl font-extrabold text-black">0/3</h1>
+            <h2 className="text-4xl font-extrabold text-black">{`${completetaskNumber}/${taskNumber}`}</h2>
           </div>
         </div>
       </div>
@@ -49,8 +68,7 @@ const HomeToken = () => {
         </button>
       </div>
       <div className="flex w-full flex-col items-center gap-4">
-        <Task />
-        <Task />
+        <Task tasks={allTask} />
       </div>
     </div>
   );

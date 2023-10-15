@@ -19,7 +19,7 @@ const Register = ({ onClick }) => {
     });
     res.json().then((data) => {
       const { token } = data;
-      window.localStorage.setItem("token", token);
+      window.sessionStorage.setItem("token", token);
       setRedirect(true);
     });
 

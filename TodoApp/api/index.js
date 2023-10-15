@@ -8,7 +8,10 @@ const register = require('./auth/Register')
 const login = require('./auth/Login')
 
 // Task
+const getTask = require('./services/task/GetTask')
 const createTask = require('./services/task/CreateTask')
+const deleteTask = require('./services/task/DeleteTask')
+const editCompleteTask = require('./services/task/EditCompleteTask')
 
 const app = express()
 app.use(express.urlencoded({ extended: false }))
@@ -31,6 +34,10 @@ app.use(
 app.post('/register', register)
 app.post('/login', login)
 app.post('/createTask', createTask)
+app.get('/getTask', getTask)
+app.delete('/deleteTask', deleteTask)
+app.put('/editCompleteTask', editCompleteTask)
+
 
 app.listen(4000, () => {
 	console.log('Server running')

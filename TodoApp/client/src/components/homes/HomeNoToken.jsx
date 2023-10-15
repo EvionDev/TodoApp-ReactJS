@@ -3,7 +3,7 @@ import React from "react";
 const HomeNoToken = () => {
   return (
     <div className=" relative flex h-screen w-full items-center justify-center">
-      <div className="h-full w-full bg-geo3d bg-cover bg-center brightness-50"></div>
+      <div className=" absolute bottom-0 left-0 h-full w-full bg-geo3d bg-cover bg-center brightness-50"></div>
       <div className="container absolute mx-auto text-center">
         <h1 className="text-3xl">
           Welcome to TodoApp - Your Ultimate Task Management Solution

@@ -1,29 +1,26 @@
-import React, { useState } from "react";
-import { BiEdit, BiTrash } from "react-icons/bi";
+import React from "react";
+import EditButton from "./EditButton";
+import DeleteButton from "./DeleteButton";
+import Input from "./Input";
 
-const Task = () => {
-  const [completed, setCompleted] = useState(false); // Stan completed
-
-  const toggleCompleted = () => {
-    setCompleted(!completed);
-  };
-  return (
-    <div className="flex h-auto w-1/4 flex-row rounded-lg border bg-[#161617] p-10 shadow-lg ">
+const Task = ({ tasks }) => {
+  return tasks.map((item, i) => (
+    <div
+      className="flex h-auto w-1/4 flex-row rounded-lg border bg-[#161617] p-10 shadow-lg"
+      key={i}
+    >
       <div className="mr-5 inline-flex items-center">
-        <input
-          id="login"
-          type="checkbox"
-          className="before:content[''] relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-fuchsia-500 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
-          onChange={toggleCompleted}
-        />
+        <Input complete={item.complete} id={item._id} />
       </div>
-      <h1 className={`basis-2/3 ${completed ? "line-through" : ""}`}>Test</h1>
+      <p className={`basis-2/3 ${item.complete && "line-through"}`}>
+        {item.description}
+      </p>
       <div className="flex cursor-pointer gap-1">
-        <BiEdit size={25} />
-        <BiTrash size={25} />
+        <EditButton />
+        <DeleteButton id={item._id} />
       </div>
     </div>
-  );
+  ));
 };
 
 export default Task;

@@ -7,7 +7,6 @@ const createTask = async (req, res) => {
 		if (description != '') {
 			jwt.verify(token, process.env.JWT_SECRET, {}, async (err, user) => {
 				const id = user.id
-				console.log(id)
 
 				await Task.create({
 					description,
