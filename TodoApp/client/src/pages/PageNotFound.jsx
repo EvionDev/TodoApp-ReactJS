@@ -8,7 +8,9 @@ const PageNotFound = () => {
         <div className="h-full w-full bg-notFound bg-cover"></div>
       </div>
       <h3 className="text-lg text-fuchsia-500">404 not found</h3>
-      <h1 className="px-2 text-2xl">Whoops! That page doesn't exist</h1>
+      <h1 className="px-2 text-center text-2xl">
+        Whoops! That page doesn't exist
+      </h1>
       <Link to={"/"}>
         <button className="rounded-lg bg-fuchsia-500 p-3 transition-colors duration-300 hover:bg-fuchsia-700">
           Back to homepage
