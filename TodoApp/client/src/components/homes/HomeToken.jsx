@@ -28,7 +28,7 @@ const HomeToken = () => {
           <h3 className="text-xl">Keep it up</h3>
         </div>
         <div>
-          <div className="flex h-[150px] w-[150px] items-center justify-center rounded-full bg-orange-500">
+          <div className="flex h-[150px] w-[150px] items-center justify-center rounded-full bg-fuchsia-500">
             <h1 className="text-4xl font-extrabold text-black">0/3</h1>
           </div>
         </div>
@@ -37,12 +37,12 @@ const HomeToken = () => {
         <input
           type="text"
           placeholder="write your next task"
-          className="w-[80%] rounded-[20px] border-2 border-[#161617] bg-[#161617] py-3 pl-5 pr-2 shadow-lg outline-none transition-colors focus:border-orange-500"
+          className="w-[80%] rounded-[20px] border-2 border-[#161617] bg-[#161617] py-3 pl-5 pr-2 shadow-lg outline-none transition-colors focus:border-fuchsia-500"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <button
-          className=" flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-black delay-75 duration-500 hover:rotate-90"
+          className=" flex h-12 w-12 items-center justify-center rounded-full bg-fuchsia-500 text-black delay-75 duration-500 hover:rotate-90"
           onClick={createTask}
         >
           <AiOutlinePlus size={20} />

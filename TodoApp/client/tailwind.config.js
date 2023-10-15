@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         auth: "url('../Auth.jpg')",
         notFound: "url('../not-found.svg')",
+        geo3d: "url('../3dgeo.svg')",
       },
     },
   },

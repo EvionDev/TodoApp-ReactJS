@@ -62,7 +62,7 @@ const Register = ({ onClick }) => {
       <p className="text-sm text-white">
         if you already a member please?
         <span
-          className="ml-1 cursor-pointer font-semibold text-orange-400 duration-300 hover:text-orange-500"
+          className="ml-1 cursor-pointer font-semibold text-fuchsia-500 duration-300 hover:text-fuchsia-600"
           onClick={onClick}
         >
           Sign in
