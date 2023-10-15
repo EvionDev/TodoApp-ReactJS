@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         auth: "url('../Auth.jpg')",
+        notFound: "url('../not-found.svg')",
       },
     },
   },
