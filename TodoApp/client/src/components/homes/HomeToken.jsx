@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import Task from "../tasks/task";
+import Task from "../tasks/Task";
 
 const HomeToken = () => {
   const [description, setDescription] = useState("");
@@ -9,8 +9,8 @@ const HomeToken = () => {
   const [allTask, setAllTask] = useState([]);
   const token = window.sessionStorage.getItem("token");
 
-  const getTask = async () => {
-    const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}getTask`, {
+  const getTasks = async () => {
+    const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}getTasks`, {
       method: "GET",
       headers: { "Content-Type": "application/json", Authorization: token },
     });
@@ -36,15 +36,17 @@ const HomeToken = () => {
   };
 
   useEffect(() => {
-    getTask();
-  });
+    getTasks();
+  }, [getTasks]);
 
   return (
     <div className="mt-20 flex w-full flex-col items-center gap-8 md:mt-28">
       <div className="m-2 flex h-auto w-auto flex-row justify-between gap-8 rounded-[42px] border border-white px-7 py-8 md:px-14 md:py-16">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-3xl font-bold">Todo Done</h1>
-          <h3 className="text-xl">Keep it up</h3>
+          <h3 className="text-xl">
+            {completetaskNumber == 0 ? "Let's go" : "Keep it up"}
+          </h3>
         </div>
         <div>
           <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-fuchsia-500 md:h-[150px] md:w-[150px]">

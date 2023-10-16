@@ -34,10 +34,9 @@ app.use(
 app.post('/register', register)
 app.post('/login', login)
 app.post('/createTask', createTask)
-app.get('/getTask', getTask)
+app.get('/getTasks', getTask)
 app.delete('/deleteTask', deleteTask)
 app.put('/editCompleteTask', editCompleteTask)
-
 
 app.listen(4000, () => {
 	console.log('Server running')

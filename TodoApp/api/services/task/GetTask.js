@@ -15,7 +15,12 @@ const getTask = async (req, res) => {
 					author: id,
 					complete: true,
 				})
-				return res.json({ status: 400, message: 'Pobrano zadania', tasks: allUserTask, completeTasks: allUserCompleteTask })
+				return res.json({
+					status: 400,
+					message: 'Pobrano zadania',
+					tasks: allUserTask,
+					completeTasks: allUserCompleteTask,
+				})
 			})
 		} else {
 			return res.json({ status: 400, message: 'Nie ma aktywnego tokena' })

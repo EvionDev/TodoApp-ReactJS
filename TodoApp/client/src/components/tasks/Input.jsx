@@ -4,6 +4,7 @@ const Input = ({ id, complete }) => {
   const [completed, setCompleted] = useState(!complete);
 
   const toggleCompleted = () => {
+    setCompleted(!completed);
     const completeTask = async () => {
       const res = await fetch(
         `${import.meta.env.VITE_DATABASE_URL}editCompleteTask`,
@@ -20,7 +21,6 @@ const Input = ({ id, complete }) => {
         console.log(data);
       });
     };
-    setCompleted(!completed);
     completeTask();
   };
   return (
