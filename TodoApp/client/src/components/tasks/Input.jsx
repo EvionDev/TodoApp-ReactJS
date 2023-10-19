@@ -17,9 +17,7 @@ const Input = ({ id, complete }) => {
           },
         },
       );
-      res.json().then((data) => {
-        console.log(data);
-      });
+      res.json().then((data) => {});
     };
     completeTask();
   };

@@ -30,14 +30,14 @@ const HomeToken = () => {
       headers: { "Content-Type": "application/json" },
     });
     res.json().then((data) => {
-      console.log(data);
       setDescription("");
+      getTasks();
     });
   };
 
   useEffect(() => {
     getTasks();
-  }, [getTasks]);
+  }, []);
 
   return (
     <div className="mt-20 flex w-full flex-col items-center gap-8 md:mt-28">
@@ -70,7 +70,7 @@ const HomeToken = () => {
         </button>
       </div>
       <div className="flex w-full flex-col items-center gap-4">
-        <Task tasks={allTask} />
+        <Task tasks={allTask} updateData={getTasks()} />
       </div>
     </div>
   );

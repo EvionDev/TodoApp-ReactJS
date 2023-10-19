@@ -5,7 +5,7 @@ const editCompleteTask = async (req, res) => {
 	const completed = req.headers.completed
 	try {
 		if (taskId) {
-			await Task.findOneAndUpdate({ id: taskId, complete: completed })
+			await Task.findByIdAndUpdate(taskId, { complete: completed })
 			return res.json({ status: 400, message: `Zmieniono stan zadania na ${completed}` })
 		} else {
 			return res.json({ status: 400, message: 'Nie można znaleźć zadania' })
