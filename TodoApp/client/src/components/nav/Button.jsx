@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Button = ({ name, special, onClick }) => {
+const Button = ({ name, special, onClick, path }) => {
   return (
-    <Link to={"/auth"}>
+    <Link to={path}>
       <button
         className={`w-auto min-w-[130px] rounded-lg px-6 py-2 font-semibold duration-300 ease-in ${
           special

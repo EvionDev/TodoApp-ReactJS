@@ -11,6 +11,7 @@ const login = require('./auth/Login')
 const getTask = require('./services/task/GetTask')
 const createTask = require('./services/task/CreateTask')
 const deleteTask = require('./services/task/DeleteTask')
+const editTask = require('./services/task/EditTask')
 const editCompleteTask = require('./services/task/EditCompleteTask')
 
 const app = express()
@@ -37,6 +38,7 @@ app.post('/createTask', createTask)
 app.get('/getTasks', getTask)
 app.delete('/deleteTask', deleteTask)
 app.put('/editCompleteTask', editCompleteTask)
+app.put('/editTask', editTask)
 
 app.listen(4000, () => {
 	console.log('Server running')

@@ -6,9 +6,7 @@ const Input = ({ id, complete }) => {
   const toggleCompleted = () => {
     setCompleted(!completed);
     const completeTask = async () => {
-      const res = await fetch(
-        `${import.meta.env.VITE_DATABASE_URL}editCompleteTask`,
-        {
+      const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}editCompleteTask`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

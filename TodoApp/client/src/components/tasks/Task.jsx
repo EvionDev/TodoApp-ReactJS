@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import EditButton from "./EditButton";
 import DeleteButton from "./DeleteButton";
 import Input from "./Input";
 
-const Task = ({ tasks, updateData }) => {
+const Task = ({ tasks, updateData, modal }) => {
   const textTruncation = (text, maxLength) => {
     if (text.length <= maxLength) {
       return text;
@@ -25,7 +25,7 @@ const Task = ({ tasks, updateData }) => {
         {textTruncation(item.description, 15)}
       </p>
       <div className="flex cursor-pointer gap-1">
-        <EditButton />
+        <EditButton id={item._id} updateData={updateData} />
         <DeleteButton id={item._id} updateData={updateData} />
       </div>
     </div>
