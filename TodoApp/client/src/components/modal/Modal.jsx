@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-const Modal = ({ id, closeModal }) => {
+const Modal = ({ id, closeModal, updateData }) => {
   const [editTextValue, setEditTextValue] = useState("");
 
   const editTask = async () => {
-    console.log(id);
-    const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}editTask`, {
+    await fetch(`${import.meta.env.VITE_DATABASE_URL}editTask`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -13,7 +12,8 @@ const Modal = ({ id, closeModal }) => {
         EditText: editTextValue,
       },
     });
-      closeModal();
+    closeModal();
+    updateData();
   };
   return (
     <div className=" absolute left-2/4 top-2/4 z-10 flex h-64 w-96 -translate-x-2/4 -translate-y-2/4 flex-col border-2 border-white bg-black">

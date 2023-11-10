@@ -71,7 +71,7 @@ const HomeToken = () => {
         </button>
       </div>
       <div className="flex w-full flex-col items-center gap-4">
-        <Task tasks={allTask} updateData={getTasks()} />
+        <Task tasks={allTask} updateData={getTasks} />
       </div>
     </div>
   );

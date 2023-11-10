@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 
-const Input = ({ id, complete }) => {
+const Input = ({ id, complete, updateData }) => {
   const [completed, setCompleted] = useState(!complete);
 
   const toggleCompleted = () => {
     setCompleted(!completed);
     const completeTask = async () => {
-      const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}editCompleteTask`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            IdTask: id,
-            Completed: completed,
-          },
+      await fetch(`${import.meta.env.VITE_DATABASE_URL}editCompleteTask`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          IdTask: id,
+          Completed: completed,
         },
-      );
-      res.json().then((data) => {});
+      });
+      updateData();
     };
     completeTask();
   };
