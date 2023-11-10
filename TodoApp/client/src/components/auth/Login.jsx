@@ -19,8 +19,12 @@ const Register = ({ onClick }) => {
     });
     res.json().then((data) => {
       const { token } = data;
-      window.sessionStorage.setItem("token", token);
-      setRedirect(true);
+      if(data.status === 200) {
+        window.sessionStorage.setItem("token", token);
+        setRedirect(true);
+      } else {
+        
+      }
     });
     setEmail("");
     setPassword("");

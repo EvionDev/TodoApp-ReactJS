@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "./Input";
 import Label from "./Label";
 import Button from "./Button";
+import { Navigate } from "react-router-dom";
 
 const Register = ({ onClick }) => {
   const [name, setName] = useState("");
@@ -18,9 +19,13 @@ const Register = ({ onClick }) => {
       headers: { "Content-Type": "application/json" },
     });
     res.json().then((data) => {
-      const { token } = data;
-      window.sessionStorage.setItem("token", token);
-      setRedirect(true);
+      if (data.status === 200) {
+        const { token } = data;
+        window.sessionStorage.setItem("token", token);
+        setRedirect(true);
+      } else {
+        console.log(data.message);
+      }
     });
 
     setName("");

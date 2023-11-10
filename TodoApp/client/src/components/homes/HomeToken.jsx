@@ -36,9 +36,9 @@ const HomeToken = () => {
     });
   };
 
-  useEffect(() => {
-    getTasks();
-  }, []);
+  // useEffect(() => {
+  //   getTasks();
+  // }, []);
 
   return (
     <div className="mt-20 flex w-full flex-col items-center gap-8 md:mt-28">
