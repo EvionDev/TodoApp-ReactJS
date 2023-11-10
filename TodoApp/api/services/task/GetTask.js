@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const getTask = async (req, res) => {
 	const token = req.headers.authorization
 	try {
-		if (token) {
+		if (token && token === undefined) {
 			jwt.verify(token, process.env.JWT_SECRET, {}, async (err, user) => {
 				const id = user.id
 
