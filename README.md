@@ -23,10 +23,10 @@ npm run dev
 
 ## Author
 
-👤 **EvionDev, KarlosDeveloper**
+👤 **KarlosDeveloper, EvionDev**
 
-- Github: [@EvionDev](https://github.com/EvionDev)
 - Github: [@KarlosDeveloper](https://github.com/KarlosDeveloper)
+- Github: [@EvionDev](https://github.com/EvionDev)
 
 ## Show your support
 
